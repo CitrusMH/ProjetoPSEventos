@@ -1,0 +1,38 @@
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/nav.ejs') %>
+<br>
+<div class="container">
+    <a href="/eventos/novo" class="btn btn-primary" style="margin-bottom: 24px;">Novo Evento</a>
+    <br>
+    <div class="card">
+        <div class="card-header">
+            Eventos Cadastrados
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="col-4">Evento</th>
+                        <th class="col-4">Artista</th>
+                        <th class="col-2">Categoria</th>
+                        <th class="col-2">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% eventos.forEach(function(evento) { %>
+                        <tr>
+                            <td><%= evento.nome %> (<%= evento.data.toLocaleDateString() %>)</td>
+                            <td><%= evento.artista ? evento.artista.nome : 'Sem Artista' %></td>
+                            <td><%= evento.categoria ? evento.categoria.tipo : 'Sem categoria' %></td>
+                            <td>
+                                <a href="/eventos/<%= evento.id %>" class="btn btn-primary">Editar</a>
+                                <a href="/eventos/delete/<%= evento.id %>" onclick="return confirm('Tem certeza que deseja excluir este evento?');" class="btn btn-danger">Excluir</a>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<%- include('../partials/footer.ejs') %>

@@ -1,0 +1,36 @@
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/nav.ejs') %>
+<br>
+<div class="container">
+    <a href="/artistas/novo" class="btn btn-primary mb-4">Novo Artista</a>
+    <br>
+    <div class="card  ">
+        <div class="card-header">
+            Artistas Cadastrados
+        </div>
+        <div class="card-body">
+            <table class="table " >
+                <thead>
+                    <th class="col-7">Nome do Artista</th>
+                    <th class="col-3">Gênero</th>
+                    <th class="col-2">Ações</th>
+                </thead>
+                <tbody>
+                    <% artistas.forEach(artista => { %>
+                        <tr>
+                            <td><%= artista.nome %></td>
+                            <td><%= artista.estilo %></td>
+                            <td>
+                                <a href="/artistas/<%= artista.id %>" 
+                                    class="btn btn-primary">Editar</a>
+                                <a href="/artistas/delete/<%= artista.id %>" 
+                                    class="btn btn-danger">Excluir</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<%- include('../partials/footer.ejs') %>

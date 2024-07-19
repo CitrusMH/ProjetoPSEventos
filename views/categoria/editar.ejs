@@ -1,0 +1,31 @@
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/nav.ejs') %>
+<br>
+<div class="container">
+    <div class="card  ">
+        <div class="card-header">
+            Editar Gênero
+        </div>
+        <div class="card-body">
+            <form method="post" action="/categorias/salvar">
+                <div class="form-floating mb-3">
+                    <input type="hidden" name="id" value="<%= categoria.id %>">
+                    <input 
+                        type="text" 
+                        class="form-control  "
+                        name="tipo"
+                        id="categoria"  
+                        placeholder="Gênero"
+                        required
+                        value="<%= categoria.tipo %>">
+                    <label for="categoria">Gênero</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <button class="btn btn-primary" type="submit">Salvar</button>
+                    <a href="/categorias" class="btn btn-warning">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include('../partials/footer.ejs') %>

@@ -1,0 +1,27 @@
+<%- include('../partials/head.ejs') %> <%- include('../partials/nav.ejs') %>
+<br />
+<div class="container">
+  <div class="card  ">
+    <div class="card-header">Nova Categoria</div>
+    <div class="card-body">
+      <form method="post" action="/categorias">
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control  "
+            name="tipo"
+            id="tipo"
+            placeholder="Gênero"
+            required
+          />
+          <label for="categoria">Categoria</label>
+        </div>
+        <div class="form-floating mb-3">
+          <button class="btn btn-primary" type="submit">Salvar</button>
+          <a href="/categorias" class="btn btn-warning">Cancelar</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('../partials/footer.ejs') %>

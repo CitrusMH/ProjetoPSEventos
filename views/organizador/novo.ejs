@@ -1,0 +1,29 @@
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/nav.ejs') %>
+<br>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Novo Organizador
+        </div>
+        <div class="card-body">
+            <form method="post" action="/organizadores">
+                <div class="form-floating mb-3">
+                    <input 
+                        type="text" 
+                        class="form-control"
+                        name="nome"
+                        id="nome"
+                        placeholder="Nome do Organizador"
+                        required>
+                    <label for="nome">Nome do Organizador</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <button class="btn btn-primary" type="submit">Salvar</button>
+                    <a href="/organizadores" class="btn btn-warning">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include('../partials/footer.ejs') %>

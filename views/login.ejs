@@ -1,0 +1,46 @@
+<%- include('./partials/head.ejs') %>
+<div class="container">
+    <div class="position-absolute  top-50 start-50 translate-middle">
+        <div class="text-center">
+            <h1 class="text-white">PincoladaEvents</h1>
+        </div>
+        <div 
+        class="card"
+        style="width: 18rem;">
+        
+        <div class="card-header  font-weight-bold">Login</div>
+        <div class="card-body">
+            <form method="post" action="/usuarios/login">
+                <div class="form-floating mb-3">
+                    <input
+                        type="text"
+                        name="email"
+                        id="email"
+                        class="form-control  "
+                        placeholder="Digite o seu e-mail">
+                    <label for="email" class="">Digite o seu e-mail</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input
+                        type="password"
+                        name="senha"
+                        id="senha"
+                        class="form-control  "
+                        placeholder="Digite a sua senha">
+                    <label for="email" class="">Digite a sua senha</label>
+                </div>
+                <br>
+                <% if(msg != '') { %>
+                    <div class="alert alert-danger">
+                        <%= msg %>
+                    </div>
+                <% }%>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button type="submit" class="btn btn-lg btn-primary">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+</div>
+<%- include('./partials/footer.ejs') %>

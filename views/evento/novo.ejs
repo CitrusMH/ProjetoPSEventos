@@ -1,0 +1,63 @@
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/nav.ejs') %>
+
+<div class="container">
+    <div class="card   mt-4">
+        <div class="card-header">
+            Novo Evento
+        </div>
+        <div class="card-body">
+            <form method="post" action="/eventos">
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome do Evento</label>
+                    <input 
+                        type="text" 
+                        class="form-control"
+                        id="nome"
+                        name="nome"
+                        placeholder="Digite o nome do evento"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label for="data" class="form-label">Data do Evento</label>
+                    <input 
+                        type="date" 
+                        class="form-control"
+                        id="data"
+                        name="data"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label for="artistaId" class="form-label">Artista</label>
+                    <select class="form-control" id="artistaId" name="artistaId" required>
+                        <% artistas.forEach(artista => { %>
+                            <option value="<%= artista.id %>"><%= artista.nome %></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="organizadorId" class="form-label">Organizador</label>
+                    <select class="form-control" id="organizadorId" name="organizadorId" required>
+                        <% organizadores.forEach(organizador => { %>
+                            <option value="<%= organizador.id %>"><%= organizador.nome %></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="categoriaId" class="form-label">Categoria</label>
+                    <select class="form-control" id="categoriaId" name="categoriaId" required>
+                        <% categorias.forEach(categoria => { %>
+                            <option value="<%= categoria.id %>"><%= categoria.tipo %></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <a href="/eventos" class="btn btn-warning">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer.ejs') %>

@@ -1,0 +1,39 @@
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/nav.ejs') %>
+<br>
+<div class="container">
+    <div class="card  ">
+        <div class="card-header">
+            Novo Artista
+        </div>
+        <div class="card-body">
+            <form method="post" action="/artistas">
+                <div class="form-floating mb-3">
+                    <input 
+                        type="text" 
+                        class="form-control  "
+                        name="nome"
+                        id="nome"
+                        placeholder="Nome do Artista"
+                        required>
+                    <label for="nome">Nome do Artista</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input 
+                        type="text" 
+                        class="form-control  "
+                        name="estilo"
+                        id="estilo"
+                        placeholder="Estilo Artístico"
+                        required>
+                    <label for="estilo">Estilo Artístico</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <button class="btn btn-primary" type="submit">Salvar</button>
+                    <a href="/artistas" class="btn btn-warning">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include('../partials/footer.ejs') %>
